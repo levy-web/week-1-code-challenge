@@ -1,0 +1,26 @@
+{
+  "name": "week-1-code-challenge",
+  "version": "1.0.0",
+  "description": "javascript week one moringa school code challenge",
+  "main": "marks.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levy-web/week-1-code-challenge.git"
+  },
+  "keywords": [
+    "grade",
+    "calculator",
+    "speedlimit",
+    "tax",
+    "calculator"
+  ],
+  "author": "levy muguro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/levy-web/week-1-code-challenge/issues"
+  },
+  "homepage": "https://github.com/levy-web/week-1-code-challenge#readme"
+}
