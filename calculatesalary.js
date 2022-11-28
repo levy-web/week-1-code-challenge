@@ -1,31 +1,22 @@
 const prompt = require("prompt-sync")();
-//function tzhat prompts individuals to input their pay
-//has a fixed monthly personal relief 
-// calculates total amount to be deducted before calculating the tax
+//prompts entry of user information
 
-function calcSalary(personalRelief, netSalary,totalDeductions, contribitionBenefit,NHIFDeductions, NSSFDeductions, grossSalary, taxableIncome){
-    let paye;
-    personalRelief = +2400;
-    grossSalary = +prompt("Enter your salary amount:")
-    contribitionBenefit = +prompt("Contribution Benefit:")
-    NHIFDeductions= +prompt("Enter NHIFDeduction:")
-    NSSFDeductions= +prompt("Enter NSSFDeduction:")  
+let grossSalary = +prompt("Enter your salary amount:")
+let contribitionBenefit = +prompt("Contribution Benefit:")
+let NHIFDeductions= +prompt("Enter NHIFDeduction:")
+let NSSFDeductions= +prompt("Enter NSSFDeduction:")
 
-    //calculates the amount that is taxable
 
-    
-    totalDeductions = (NHIFDeductions + NSSFDeductions + personalRelief + contribitionBenefit);
-    taxableIncome = grossSalary - totalDeductions;
-
-    console.log(`your taxableIncome is ksh: ${taxableIncome}`)
-    console.log(`your totalDeductions is ksh: ${totalDeductions}`)
-
-    //calculating monthly paye(tax) 
-    //depending on individuals income
-
+//calculates the taxable income
+//and calculate each individuals monthly income depending on their taxable income 
+function calcPaye(){
+    let taxableIncome = grossSalary - calcTotalDeductions()
+    console.log(taxableIncome)
     switch(true){
         case (taxableIncome<24000):
+            console.log(taxableIncome)
             paye = taxableIncome * 0.01;
+            console.log(paye)
             break;
 
         case (taxableIncome>=24001 && taxableIncome<= 32333):
@@ -35,13 +26,24 @@ function calcSalary(personalRelief, netSalary,totalDeductions, contribitionBenef
         case (taxableIncome>32333):
             paye = taxableIncome * 0.30;
             break;  
-
-    }
-    //deducts the tax(paye) and then returns the netsalary
-
-    netSalary = (parseInt (taxableIncome - paye));
-    console.log(`your netSalary is ksh: ${netSalary}`)
-    
-
+    }return paye
 }
-calcSalary()
+//calculates the total to be deducted from benefits, nhif, nssf
+//and other deductions 
+function calcTotalDeductions(){    
+
+    let personalRelief = 2400;    
+    let total = (NHIFDeductions + NSSFDeductions + personalRelief + contribitionBenefit)
+    return total    
+    
+}
+
+//deducts the deductions and tax
+//and returns the net pay
+function calcNet(){
+    let netPay = grossSalary - calcTotalDeductions() - calcPaye()
+    return `your netsalary is ksh: ${netPay}`
+}
+
+
+console.log(calcNet())
