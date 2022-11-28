@@ -1,5 +1,5 @@
 const prompt = require("prompt-sync")();
-//function that prompts individuals to input their pay
+//function tzhat prompts individuals to input their pay
 //has a fixed monthly personal relief 
 // calculates total amount to be deducted before calculating the tax
 
