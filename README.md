@@ -4,14 +4,14 @@
 ## prompting javascript to console log expected output
 
 ### marks.js file
-First program prompts entry of matks and outputd the grade
+program that prompts entry of marks and outputs the grade depending on a grading system.
 
 ### speedlimit.js file
-second program promp entry of speed and outputs ok if speed is less than 70km/s but for everytime speed is grrster than 70 it calculates deliters points which suspends drivers licence if points get over 12 points
+program that prompts the entry of speed and outputs ok if speed is less than 70km/s but for everytime speed is greater than 70 it calculates delimeters points which suspends drivers licence if points get over 12 points.
 
 
 ### paye.js file
-Third promts user credit information then it calculates paye and net salary
+program that promts user to enter payment informations then it calculates paye and net salary of the individual.
 
 # Authors
 This project was contributed to by: levy muguro
